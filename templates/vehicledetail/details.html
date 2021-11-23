@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-3">
+<h2 class="text-center alert alert-success">Vehicles Registered: </h2>
+{% if det %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Route</th>
+      <th scope="col">View more details</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if user.is_authenticated %}
+  {% for d in det %}
+    <tr>
+      <th scope="row">{{d.Sr}}</th>
+      <td>{{d.name}}</td>
+      <td>{{d.route}}</td>
+      <td><a href="/{{d.slug}}">Check more</a></td>
+      <td><a href="{% url 'updatedata' d.Sr %}" class="btn btn-warning btn-sm">Update</a></td>
+      <td>
+      <form action="{% url 'deletedata' d.Sr %}" method="post"> {% csrf_token %}
+      <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+      </form>
+      </td>
+    </tr>
+    {% endfor %}
+   {% else %}
+   <div class="card text-dark bg-warning mb-3">
+  <div class="card-header btn btn-danger">
+    <h3>Alert!!</h3>
+  </div>
+  <div class="card-body">
+    <h4>please login to view vehicle lists</h4>
+  </div>
+</div>
+{% endif %}
+  </tbody>
+</table>
+{% else %}
+<h3>No records found</h3>
+{% endif %}
+</div>
+{% endblock body %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock title%}
+{% block body %}
+{% load static %}
+<div class="container my-3">
+<h2 class="text-center alert alert-warning">Hello Everyone!</h2>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'image/minitruck.jpg' %}" style="height:550px; width:500px;" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/bus.jpg' %}" style="height:550px; width:500px;" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/third.jpg' %}" style="height:550px; width:500px;" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add Vehicle Detail</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="/add/" class="btn btn-danger">Add</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">View Vehicle Detail</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="/update/" class="btn btn-danger">Update</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+<br><br>
+<h2 class="text-left alert alert-primary">Current Status</h2>
+<div class="card bg-dark text-dark">
+  <img src="{% static 'image/pastel1.jpg' %}" style="height:200px;"class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Total Registeration of Vehicles: </h5>
+    <p class="card-text">.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div>
+<br>
+<div class="card bg-dark text-dark">
+  <img src="{% static 'image/pastel1.jpg' %}" style="height:200px;"class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Active Vehicles: </h5>
+    <p class="card-text">.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div>
+</div>
+</div>
+{% endblock body %}

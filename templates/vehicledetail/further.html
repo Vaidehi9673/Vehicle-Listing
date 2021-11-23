@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2> More details</h2>
+{% load static %}
+{% if more %}
+<div class="container my-3">
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src='/media/{{more.photo}}' class="card-img-top" height="400px" width="400px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Image</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src='/media/{{more.staticmap}}' class="card-img-top" height="400px" width="400px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Static Map</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title btn btn-warning">Vehicle Name: </h5>
+        <p class="card-text">{{more.name}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title btn btn-warning">Route: </h5>
+        <p class="card-text">{{more.route}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title btn btn-warning">Speed: </h5>
+        <p class="card-text">{{more.speed}} km/h</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title btn btn-warning">Average Speed: </h5>
+        <p class="card-text">{{more.avgspeed}} km/h</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title btn btn-warning">Fuel: </h5>
+        <p class="card-text">{{more.fuel}} (in litre)</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card text-white bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title btn btn-warning">Engine Status: </h5>
+        <p class="card-text">{{more.engstatus}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% else %}
+<h2>try again</h2>
+{% endif %}
+{% endblock body %}

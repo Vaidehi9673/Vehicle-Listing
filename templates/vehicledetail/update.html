@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-3">
+<h2 class="text-center alert alert-info">Vehicles Registered: </h2>
+<h4>Update {{Sr}}</h4>
+<form action="/<int:Sr>/" method="post"> {% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label">Vehicle name: </label>
+    <input type="text" class="form-control" id="name"  name="name" value={{name}}> 
+  </div>
+  <div class="mb-3">
+    <label for="img" class="form-label">Select image: </label>
+    <input type="file" class="form-control" id="img" name="photo" value={{photo}}>
+  </div>
+  <div class="mb-3">
+    <label for="route" class="form-label">Route: </label>
+    <input type="text" class="form-control" id="route" name="route" value={{route}}>
+  </div>
+  <div class="mb-3">
+    <label for="speed" class="form-label">Speed: (km/h)</label>
+    <input type="number" class="form-control" id="speed" name="speed" value={{speed}}>
+  </div>
+  <div class="mb-3">
+    <label for="avgspeed" class="form-label">Average speed: (km/h) </label>
+    <input type="number" class="form-control" id="avgspeed" name="avgspeed" value={{avgspeed}}>
+  </div>
+  <div class="mb-3">
+    <label for="engstatus" class="form-label">Engine status: </label>
+    <input type="text" class="form-control" id="engstatus" name="engstatus" value={{engstatus}}>
+  </div>
+  <div class="mb-3">
+    <label for="fuel" class="form-label">Fuel level (l):</label>
+    <input type="number" class="form-control" id="fuel" name="fuel" value={{fuel}}>
+  </div>
+  <div class="mb-3">
+    <label for="temp" class="form-label">Temperature: </label>
+    <input type="number" class="form-control" id="temp" name="temp" value={{temp}}>
+  </div>
+  <div class="mb-3">
+    <label for="img1" class="form-label">Select static map: </label>
+    <input type="file" class="form-control" id="img1" name="staticmap" value={{staticmap}}>
+  </div>
+  <div class="my-3">
+  <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</form>
+</div>
+{% endblock body %}
